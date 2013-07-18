@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <div class="container">
+  <h1>Welcome to Beez.ly</h1>
+  <p>A url shortener for working folks.</p>
+  <div id = urls>
+    <ul>URLS
+      <% @urls.each do |url| %>
+        <li><%=url.id%><a href="/<%=url.short_url%>"><%=url.short_url%></a><%=url.url%><%= url.count %>      
+          <% end %></li>
+     </ul>
+   </div>
+</body>
+
+
